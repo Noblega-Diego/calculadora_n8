@@ -1,0 +1,144 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #F0F8FF;
+}
+
+.calculadora::after{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #1F2635;
+    text-align: center;
+    position: absolute;
+    content: "by Diego Noblega";
+    height: 20px;
+    top: 105%;
+    left: 0px;
+    width: 100%;
+}
+
+.calculadora{
+    position: relative;
+    width: 200px;
+    padding: 10px;
+    background-color: #F8F8F8;
+    border: solid 1px #F0F0F0;
+    border-radius: 6px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #293241;
+}
+.panel-superior{
+    position: relative;
+    background-color: #293241;
+    width: 92%;
+    height: 80px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.panel-superior::before{
+    position: absolute;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 40%;
+    background-color: #1F2635;
+    top: 0px;
+    left: 0px;
+    
+}
+.panel-superior p{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    text-align: end;
+}
+.panel-superior p.resultado{
+    color: #E0FBFC;
+    font-size: 30px;
+    margin: 0px;
+}
+.panel-superior p.operacion{
+    margin-top: 0px;
+    color: #98C1D9;
+    font-family: 20px;
+}
+.panel-superior p.up{
+    animation: 0.2s;
+    animation-name: up;
+}
+.panel-superior .num-insert{
+    display: inline-block;
+    animation: 0.2s;
+    animation-name: slipup;
+}
+@keyframes slipup {
+    from{
+        transform: translatey(10px);
+    }
+}
+@keyframes up {
+    to{
+        transform: translateY(-18px);
+        color: transparent;
+    }
+}
+.panel-inferior{
+    display: grid;
+    height: 200px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "bt1 bt2 bt3 sum" 
+                         "bt4 bt5 bt6 res" 
+                         "bt7 bt8 bt9 mul" 
+                         "c   bt0 igl div";
+    
+}
+
+.panel-inferior .bt{
+    background-color: transparent;
+    margin: 4px;
+    border-radius: 4px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    border: 0px solid;
+    color: #293241;
+}
+.panel-inferior .bt-num{
+    border:  1px solid #3D5A80;
+}
+
+.panel-inferior .bt-num:hover{
+    border:  1px solid #293241;
+    background: #293241;
+    color: #98C1D9;
+}
+.panel-inferior .bt-op{
+    background: #EE6C4D;
+}
+.panel-inferior .bt-op:hover{
+    background: #E64C27;
+}
+.panel-inferior .bt-igl:hover{
+    background: #15894A;
+}
+.panel-inferior .bt-c:hover{
+    background: #D63030;
+}
+.panel-inferior .bt-1{ grid-area: bt1;}
+.panel-inferior .bt-2{ grid-area: bt2;}
+.panel-inferior .bt-3{ grid-area: bt3;}
+.panel-inferior .bt-4{ grid-area: bt4;}
+.panel-inferior .bt-5{ grid-area: bt5;}
+.panel-inferior .bt-6{ grid-area: bt6;}
+.panel-inferior .bt-7{ grid-area: bt7;}
+.panel-inferior .bt-8{ grid-area: bt8;}
+.panel-inferior .bt-9{ grid-area: bt9;}
+.panel-inferior .bt-0{ grid-area: bt0;}
+.panel-inferior .bt-mul{ grid-area: mul;}
+.panel-inferior .bt-div{ grid-area: div;}
+.panel-inferior .bt-sum{ grid-area: sum;}
+.panel-inferior .bt-res{ grid-area: res;}
+.panel-inferior .bt-igl{ grid-area: igl; background: #1AAD5E;}
+.panel-inferior .bt-c{ grid-area: c; background: #E83F3F;}
